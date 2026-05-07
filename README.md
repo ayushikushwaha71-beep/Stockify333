@@ -189,6 +189,6 @@ Notes
 The project uses mock product data for demonstration purposes.
 Authentication and role handling are implemented on the frontend.
 The application was built as part of a frontend take-home assignment.
-Author
 
+Author
 Ayushi Kushwaha
