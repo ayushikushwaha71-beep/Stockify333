@@ -1,92 +1,150 @@
-# Stockify - Commodities Management Dashboard
+# Stockify
 
-A modern, responsive web application for managing commodities inventory with role-based access control.
+Stockify is a modern commodities management dashboard built with Next.js, TypeScript, and Tailwind CSS.
+
+The project focuses on role-based access control, inventory management, protected routes, and responsive dashboard design. It allows users to manage commodities efficiently through a clean and user-friendly interface.
+
+The application supports two different user roles:
+
+- Manager
+- Store Keeper
+
+Managers have full access to the platform, including dashboard access and product management features. Store Keepers have limited access and can only view and search products.
+
+The project also includes dark mode support and responsive layouts for desktop and mobile devices.
 
 ## Features
 
-- **Authentication**: Login with role-based access (Manager/Store Keeper)
-- **Dashboard**: Overview stats for managers (Total Products, Low Stock Items, Categories)
-- **Products Management**: View, add, edit, and delete products
-- **Role-Based Access**:
-  - Manager: Full access to dashboard and product management
-  - Store Keeper: View-only access to products
-- **Dark Mode**: Toggle between light and dark themes
-- **Responsive Design**: Works on desktop and mobile devices
-- **Search Functionality**: Search products by name or category
+### Authentication
+
+- Login functionality with email and password
+- Role-based authentication system
+- Session handling using React Context and local storage
+
+### Role-Based Access Control
+
+Manager Permissions:
+- Access dashboard
+- View products
+- Add products
+- Edit products
+- Delete products
+- Access statistics
+
+Store Keeper Permissions:
+- View products
+- Search products
+- Read-only access
+
+### Dashboard
+
+The dashboard is accessible only to Managers.
+
+It includes:
+- Total products overview
+- Low stock product count
+- Category statistics
+- Inventory insights
+
+### Product Management
+
+- View all products
+- Search products by name
+- Search products by category
+- Add new products
+- Edit existing products
+- Delete products
+
+### User Interface
+
+- Responsive dashboard layout
+- Sidebar navigation
+- Dark and light mode support
+- Clean table-based product UI
+- Role-based sidebar menu visibility
 
 ## Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **State Management**: React Context
-- **Icons**: Emoji (for simplicity)
+Frontend Framework:
+- Next.js 14 (App Router)
 
-## Getting Started
+Language:
+- TypeScript
 
-### Prerequisites
+Styling:
+- Tailwind CSS
 
-- Node.js 18+
-- npm or yarn
+State Management:
+- React Context API
 
-### Installation
+## Installation
 
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd stockify
-   ```
+Clone the repository:
 
-2. Install dependencies:
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
+```bash
+git clone <repository-url>
+cd stockify
 
-3. Run the development server:
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
+Install dependencies:
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+npm install
 
-## Usage
+Start the development server:
 
-### Test Accounts - Login Credentials ✅
+npm run dev
 
-#### 🔐 Manager Account (Full Access)
-```
-Email:    manager@test.com
-Password: password
-```
-**Features:** Dashboard access, Add/Edit/Delete products, View all features
+Open the application in your browser:
 
-#### 👤 Store Keeper Account (View Only)
-```
-Email:    store@test.com
-Password: password
-```
-**Features:** View products only, No edit/delete permissions
+http://localhost:3000
+Demo Credentials
+Manager Account
 
-### Navigation
+Email:
 
-- Use the sidebar to navigate between Dashboard (Manager only) and Products
-- Toggle dark mode using the button in the top navbar
-- Logout using the sidebar button
+manager@test.com
 
-### Managing Products
+Password:
 
-- **Search**: Use the search bar to filter products
-- **Add Product** (Manager only): Click "Add Product" button
-- **Edit Product** (Manager only): Click "Edit" in the Actions column
-- **Delete Product** (Manager only): Click "Delete" in the Actions column
+password
 
-## Project Structure
+Manager Features:
 
-```
+Dashboard access
+Full product management
+Add/Edit/Delete permissions
+Statistics overview
+Store Keeper Account
+
+Email:
+
+store@test.com
+
+Password:
+
+password
+
+Store Keeper Features:
+
+View products
+Search products
+Limited access
+No add/edit/delete permissions
+Application Routes
+Route	Access
+/login	Public
+/dashboard	Manager Only
+/products	Manager and Store Keeper
+Sample Products
+
+The application includes sample product data for testing purposes.
+
+Product	Category	Price	Quantity	Status
+Rice	Grains	$50	100	Active
+Wheat	Grains	$40	5	Low Stock
+Sugar	Sweeteners	$30	200	Active
+Coffee	Beverages	$100	20	Active
+Tea	Beverages	$80	2	Low Stock
+Project Structure
 stockify/
 ├── app/
 │   ├── dashboard/
@@ -95,33 +153,42 @@ stockify/
 │   ├── globals.css
 │   ├── layout.tsx
 │   └── page.tsx
+│
 ├── components/
 │   ├── Layout.tsx
 │   └── ProductModal.tsx
+│
 ├── context/
 │   ├── AuthContext.tsx
 │   └── ThemeContext.tsx
+│
 ├── lib/
 │   └── data.ts
+│
 ├── package.json
 ├── tailwind.config.js
 └── README.md
-```
+Available Scripts
 
-## Development
+Run linting:
 
-- Run linting: `npm run lint`
-- Build for production: `npm run build`
-- Start production server: `npm run start`
+npm run lint
 
-## Contributing
+Build for production:
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+npm run build
 
-## License
+Start production server:
 
-This project is licensed under the MIT License.
+npm run start
+Live Demo
+https://stockify333-wa2x.vercel.app/login
+
+
+Notes
+The project uses mock product data for demonstration purposes.
+Authentication and role handling are implemented on the frontend.
+The application was built as part of a frontend take-home assignment.
+Author
+
+Ayushi Kushwaha
